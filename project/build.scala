@@ -193,14 +193,14 @@ object build {
         options ++ Seq("-sourcepath", base, "-doc-source-url", "https://github.com/scalaz/scalaz/tree/" + tag + "€{FILE_PATH}.scala")
       }
     },
-    sources in (Compile, doc) := {
-      val src = (sources in (Compile, doc)).value
-      if (isDotty.value) {
-        Nil
-      } else {
-        src
-      }
-    },
+    // sources in (Compile, doc) := {
+    //   val src = (sources in (Compile, doc)).value
+    //   if (isDotty.value) {
+    //     Nil
+    //   } else {
+    //     src
+    //   }
+    // },
 
     // retronym: I was seeing intermittent heap exhaustion in scalacheck based tests, so opting for determinism.
     parallelExecution in Test := false,
